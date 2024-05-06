@@ -1,3 +1,5 @@
-﻿  WinMain.cpp
-LIBCMTD.lib(exe_winmain.obj) : error LNK2019: unresolved external symbol WinMain referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
-C:\Users\Miste\source\repos\hw3d\x64\Debug\hw3d.exe : fatal error LNK1120: 1 unresolved externals
+﻿  Window.cpp
+  WindowsMessageMap.cpp
+  WinMain.cpp
+E:\VisualStudio\Repos\Direct3DProject\Project\hw3d\hw3d\WinMain.cpp(25,15): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
+  hw3d.vcxproj -> E:\VisualStudio\Repos\Direct3DProject\Project\hw3d.exe

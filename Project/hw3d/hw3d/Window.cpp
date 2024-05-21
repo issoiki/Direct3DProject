@@ -1,5 +1,6 @@
 #include "Window.h"
 #include <sstream>
+#include "resource.h"
 
 Window::WindowClass Window::WindowClass::wndClass;
 
@@ -14,10 +15,11 @@ Window::WindowClass::WindowClass() noexcept
     wc.cbClsExtra = 0;
     wc.cbWndExtra = 0;
     wc.hInstance = GetInstance();
-    wc.hIcon = nullptr;
+    wc.hIcon = static_cast<HICON>(LoadImage(GetInstance(), MAKEINTRESOURCE(IDI_ICON2), IMAGE_ICON, 64, 64, 0));
     wc.hCursor = nullptr;
     wc.hbrBackground = nullptr;
     wc.lpszMenuName = nullptr;
+    wc.hIconSm = static_cast<HICON>(LoadImage(GetInstance(), MAKEINTRESOURCE(IDI_ICON2), IMAGE_ICON, 16, 16, 0));
     wc.lpszClassName = GetName();
     RegisterClassEx(&wc);
 }
@@ -26,7 +28,7 @@ Window::WindowClass::~WindowClass() {
     UnregisterClass(wndClassName, GetInstance());
 }
 
-const wchar_t* Window::WindowClass::GetName() noexcept {
+const char* Window::WindowClass::GetName() noexcept {
     return wndClassName;
 }
 
@@ -34,21 +36,31 @@ HINSTANCE Window::WindowClass::GetInstance() noexcept {
     return wndClass.hInst;
 }
 
-Window::Window(int width, int height, const wchar_t* name) noexcept {
+Window::Window(int width, int height, const char* name) noexcept {
     //calculate window size based on desired client region size
     RECT wr;
     wr.left = 100;
     wr.right = width + wr.left;
     wr.top = 100;
     wr.bottom = height + wr.top;
-    AdjustWindowRect(&wr, WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU, FALSE);
-    //create windoe and get hWnd
+    if (FAILED(AdjustWindowRect(&wr, WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU, FALSE))) {
+        throw CHWND_LAST_EXCEPT();
+    };
+
+
+
+    //create window and get hWnd
     hWnd = CreateWindow(
         WindowClass::GetName(), name,
         WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU,
         CW_USEDEFAULT, CW_USEDEFAULT, wr.right - wr.left, wr.bottom - wr.top,
         nullptr, nullptr, WindowClass::GetInstance(), this
     );
+
+    if (hWnd == nullptr) {
+        throw CHWND_LAST_EXCEPT();
+    }
+
     //show window
     ShowWindow(hWnd, SW_SHOWDEFAULT);
 }
@@ -128,7 +140,7 @@ std::string Window::Exception::TranslateErrorCode(HRESULT hr) noexcept {
         FORMAT_MESSAGE_FROM_SYSTEM |
         FORMAT_MESSAGE_IGNORE_INSERTS,
         nullptr, hr, 0,
-        reinterpret_cast<LPWSTR>(&pMsgBuf), 0, nullptr);
+        reinterpret_cast<LPSTR>(&pMsgBuf), 0, nullptr);
 
     if (nMsgLen == 0) {
         return "Unidentified Error Code";
@@ -139,3 +151,8 @@ std::string Window::Exception::TranslateErrorCode(HRESULT hr) noexcept {
 }
 
 HRESULT Window::Exception::GetErrorCode() const noexcept { return hr; }
+
+std::string Window::Exception::GetErrorString() const noexcept
+{
+    return Exception::TranslateErrorCode(hr);
+}

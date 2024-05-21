@@ -1,5 +1,6 @@
 ﻿  Window.cpp
-  WindowsMessageMap.cpp
-  WinMain.cpp
-E:\VisualStudio\Repos\Direct3DProject\Project\hw3d\hw3d\WinMain.cpp(25,15): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
+E:\VisualStudio\Repos\Direct3DProject\Project\hw3d\hw3d\Window.cpp(47,1): warning C4297: 'Window::Window': function assumed not to throw an exception but does
+E:\VisualStudio\Repos\Direct3DProject\Project\hw3d\hw3d\Window.cpp(47,1): message : __declspec(nothrow), throw(), noexcept(true), or noexcept was specified on the function
+E:\VisualStudio\Repos\Direct3DProject\Project\hw3d\hw3d\Window.cpp(61,1): warning C4297: 'Window::Window': function assumed not to throw an exception but does
+E:\VisualStudio\Repos\Direct3DProject\Project\hw3d\hw3d\Window.cpp(61,1): message : __declspec(nothrow), throw(), noexcept(true), or noexcept was specified on the function
   hw3d.vcxproj -> E:\VisualStudio\Repos\Direct3DProject\Project\hw3d.exe

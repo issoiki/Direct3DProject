@@ -192,7 +192,7 @@ LRESULT Window::HandleMsg(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) noe
     {
         const POINTS pt = MAKEPOINTS(lParam);
         const int delta = GET_WHEEL_DELTA_WPARAM(wParam);
-        mouse.OnWheelDelta(pt.x, pt.y, delta)
+        mouse.OnWheelDelta(pt.x, pt.y, delta);
         break;
     }
     //end mouse events

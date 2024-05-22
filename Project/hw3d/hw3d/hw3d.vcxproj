@@ -161,6 +161,7 @@
   <ItemGroup>
     <ClCompile Include="App.cpp" />
     <ClCompile Include="IssoException.cpp" />
+    <ClCompile Include="IssoTimer.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -170,6 +171,7 @@
   <ItemGroup>
     <ClInclude Include="App.h" />
     <ClInclude Include="IssoException.h" />
+    <ClInclude Include="IssoTimer.h" />
     <ClInclude Include="IssoWin.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Mouse.h" />

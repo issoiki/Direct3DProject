@@ -7,6 +7,8 @@ int Mouse::GetPosX() const noexcept { return x; }
 
 int Mouse::GetPosY() const noexcept { return y; }
 
+bool Mouse::IsInWindow() const noexcept { return isInWindow; }
+
 bool Mouse::LeftIsPressed() const noexcept { return leftIsPressed; }
 
 bool Mouse::RightIsPressed() const noexcept { return rightIsPressed; }

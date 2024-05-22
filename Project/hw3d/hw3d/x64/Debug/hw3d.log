@@ -1,6 +1,40 @@
-﻿  Window.cpp
-E:\VisualStudio\Repos\Direct3DProject\Project\hw3d\hw3d\Window.cpp(47,1): warning C4297: 'Window::Window': function assumed not to throw an exception but does
-E:\VisualStudio\Repos\Direct3DProject\Project\hw3d\hw3d\Window.cpp(47,1): message : __declspec(nothrow), throw(), noexcept(true), or noexcept was specified on the function
-E:\VisualStudio\Repos\Direct3DProject\Project\hw3d\hw3d\Window.cpp(61,1): warning C4297: 'Window::Window': function assumed not to throw an exception but does
-E:\VisualStudio\Repos\Direct3DProject\Project\hw3d\hw3d\Window.cpp(61,1): message : __declspec(nothrow), throw(), noexcept(true), or noexcept was specified on the function
+﻿  App.cpp
+  IssoException.cpp
+  IssoTimer.cpp
+  Keyboard.cpp
+  Mouse.cpp
+  Window.cpp
+  WindowsMessageMap.cpp
+  WinMain.cpp
+E:\VisualStudio\VS2019\VS\VC\Tools\MSVC\14.29.30133\include\optional(69,17): warning C4244: 'initializing': conversion from 'WPARAM' to 'int', possible loss of data (compiling source file Window.cpp)
+E:\VisualStudio\Repos\Direct3DProject\Project\hw3d\hw3d\Window.cpp(267): message : see reference to function template instantiation 'std::_Optional_destruct_base<_Ty,true>::_Optional_destruct_base<WPARAM&>(std::in_place_t,WPARAM &)' being compiled
+          with
+          [
+              _Ty=int
+          ]
+E:\VisualStudio\Repos\Direct3DProject\Project\hw3d\hw3d\Window.cpp(267): message : see reference to function template instantiation 'std::_Optional_destruct_base<_Ty,true>::_Optional_destruct_base<WPARAM&>(std::in_place_t,WPARAM &)' being compiled
+          with
+          [
+              _Ty=int
+          ]
+E:\VisualStudio\VS2019\VS\VC\Tools\MSVC\14.29.30133\include\optional(185): message : see reference to function template instantiation 'std::_Optional_construct_base<_Ty>::_Optional_construct_base<WPARAM&>(std::in_place_t,WPARAM &)' being compiled
+          with
+          [
+              _Ty=int
+          ] (compiling source file Window.cpp)
+E:\VisualStudio\VS2019\VS\VC\Tools\MSVC\14.29.30133\include\optional(185): message : see reference to function template instantiation 'std::_Optional_construct_base<_Ty>::_Optional_construct_base<WPARAM&>(std::in_place_t,WPARAM &)' being compiled
+          with
+          [
+              _Ty=int
+          ] (compiling source file Window.cpp)
+E:\VisualStudio\Repos\Direct3DProject\Project\hw3d\hw3d\Window.cpp(90): message : see reference to function template instantiation 'std::optional<int>::optional<WPARAM&,0>(_Ty2)' being compiled
+          with
+          [
+              _Ty2=WPARAM &
+          ]
+E:\VisualStudio\Repos\Direct3DProject\Project\hw3d\hw3d\Window.cpp(90): message : see reference to function template instantiation 'std::optional<int>::optional<WPARAM&,0>(_Ty2)' being compiled
+          with
+          [
+              _Ty2=WPARAM &
+          ]
   hw3d.vcxproj -> E:\VisualStudio\Repos\Direct3DProject\Project\hw3d.exe
